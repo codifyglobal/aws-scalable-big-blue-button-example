@@ -20,7 +20,7 @@ turn_uptodate=$(grep "$turn_hostname" -q /usr/share/bbb-web/WEB-INF/classes/spri
 
 if [[ $turn_uptodate == "TOBEUPDATED" ]]; then
   sed -i "s/tu-[^\.]*/$turn_hostname/g" /usr/share/bbb-web/WEB-INF/classes/spring/turn-stun-servers.xml
-  usr/bin/bbb-conf --restart
+  /usr/bin/bbb-conf --restart
 fi
 
 exit 0
